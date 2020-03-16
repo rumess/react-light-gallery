@@ -17,7 +17,7 @@ import React, { Component } from 'react'
 
 import Gallery from 'react-light-gallery'
 
-export default class App extends Component {
+class Example extends Component {
   render () {
     const items = [
       {

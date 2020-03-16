@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Gallery from 'react-light-gallery'
+import Gallery from '@rumess/react-light-gallery'
 
 
 export default class App extends Component {

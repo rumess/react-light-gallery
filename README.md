@@ -1,13 +1,15 @@
-# react-light-gallery
+# @rumess/react-light-gallery
 
 > 
 
-[![NPM](https://img.shields.io/npm/v/react-light-gallery.svg)](https://www.npmjs.com/package/react-light-gallery) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@rumess/react-light-gallery)](https://www.npmjs.com/package/@rumess/react-light-gallery) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+[DEMO](https://rumess.github.io/react-light-gallery/)
 
 ## Install
 
 ```bash
-npm install --save react-light-gallery
+npm install --save @rumess/react-light-gallery
 ```
 
 ## Usage
@@ -15,7 +17,7 @@ npm install --save react-light-gallery
 ```jsx
 import React, { Component } from 'react'
 
-import Gallery from 'react-light-gallery'
+import Gallery from '@rumess/react-light-gallery'
 
 class Example extends Component {
   render () {

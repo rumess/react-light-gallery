@@ -15,15 +15,39 @@ npm install --save react-light-gallery
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-light-gallery'
+import Gallery from 'react-light-gallery'
 
-class Example extends Component {
+export default class App extends Component {
   render () {
+    const items = [
+      {
+        name: 'Name here', // Optional
+        image: '/path/to/image',
+        thumbnail: '/path/to/image', // Optional
+        caption: 'Caption here' // Optional
+      },
+      {
+        name: 'Name here', // Optional
+        image: '/path/to/image',
+        thumbnail: '/path/to/image', // Optional
+        caption: 'Caption here' // Optional
+      },
+      ...
+    ];
+
+    const galleryOptions = {
+      overlayColor: "rgba( 0,0,0,.5 )", // String
+      overlay: true, // true, false or function
+      // overlay: ( item, index ) => {
+      //   console.log( item, index );
+      // },
+    }
     return (
-      <MyComponent />
+      <Gallery items={items} options={galleryOptions}/>
     )
   }
 }
+
 ```
 
 ## License

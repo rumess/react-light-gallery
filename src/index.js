@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 class Index extends Component {
+    static defaultProps = {
+        overlayColor: "rgba(0,0,0,0.4)",
+        overlay: true
+    }
+
     image = new Image();
 
     constructor( props ) {
@@ -49,14 +54,7 @@ class Index extends Component {
 
     render() {
         const{ items } = this.state;
-        const { options } = this.props;
-
-        let defaultOptions = {
-          overlayColor: "rgba(0,0,0,0.4)",
-          overlay: true
-        }
-        
-        defaultOptions = { ...defaultOptions, ...options };
+        const { overlayColor, overlay } = this.props;
 
         return (
             <div className="gallery">
@@ -64,9 +62,9 @@ class Index extends Component {
                     { items && items.map( ( item, index )=> (
                         <div className="item" key={`gallery-item-${index}`} onClick={ () => this.previewImage(index) } title={ item.name || item.caption }>
                             <img className="item-image" src={item.thumbnail || item.image} alt={ item.name || item.caption }/>
-                            { defaultOptions.overlay &&
-                              <div className="overlay" style={{ background: defaultOptions.overlayColor }}>
-                                  { typeof defaultOptions.overlay === "function" &&  defaultOptions.overlay( item, index ) }
+                            { overlay &&
+                              <div className="overlay" style={{ background: overlayColor }}>
+                                  { typeof overlay === "function" &&  overlay( item, index ) }
                               </div>
                             }
                         </div>

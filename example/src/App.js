@@ -3,6 +3,10 @@ import Gallery from '@rumess/react-light-gallery'
 
 
 export default class App extends Component {
+
+  overlayContent = ( item, index ) => {
+    return <h1 style={{textAlign: "center"}}>{item.caption}</h1>
+  }
   render () {
     const items = [
       {
@@ -27,16 +31,13 @@ export default class App extends Component {
       },
     ];
 
-    const galleryOptions = {
-      // overlayColor: "rgba( 255,0,0,.5 )", // String
-      overlay: true, // true, false or function
-      // overlay: ( item, index ) => {
-      //   console.log( item, index );
-      // },
-    }
     return (
       <div>
-        <Gallery items={items} options={galleryOptions}/>
+        <Gallery 
+          items={ items } 
+          overlay={ this.overlayContent } 
+          overlayColor="rgba( 255,0,0,.5 )"
+        />
       </div>
     )
   }

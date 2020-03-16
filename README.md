@@ -14,6 +14,7 @@ npm install --save @rumess/react-light-gallery
 
 ## Usage
 
+### Basic Usage
 ```jsx
 import React, { Component } from 'react'
 
@@ -37,19 +38,46 @@ class Example extends Component {
       ...
     ];
 
-    const galleryOptions = {
-      overlayColor: "rgba( 0,0,0,.5 )", // String
-      overlay: true, // true, false or function
-      // overlay: ( item, index ) => {
-      //   console.log( item, index );
-      // },
-    }
     return (
-      <Gallery items={items} options={galleryOptions}/>
+      <Gallery items={ items } overlay={ true } overlayColor="rgba( 255,0,0,.5 )" />
     )
   }
 }
 
+```
+
+### With overlay Contents
+```jsx
+import React, { Component } from 'react'
+
+import Gallery from '@rumess/react-light-gallery'
+
+class Example extends Component {
+  overlayContent = ( item, index ) => {
+    return <h1 style={{textAlign: "center"}}>{item.caption}</h1>
+  }
+  render () {
+    const items = [
+      {
+        name: 'Name here', // Optional
+        image: '/path/to/image',
+        thumbnail: '/path/to/image', // Optional
+        caption: 'Caption here' // Optional
+      },
+      {
+        name: 'Name here', // Optional
+        image: '/path/to/image',
+        thumbnail: '/path/to/image', // Optional
+        caption: 'Caption here' // Optional
+      },
+      ...
+    ];
+
+    return (
+      <Gallery items={ items } overlay={ this.overlayContent } overlayColor="rgba( 255,0,0,.5 )" />
+    )
+  }
+}
 ```
 
 ## License

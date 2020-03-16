@@ -1,10 +1,11 @@
 {
   "name": "@rumess/react-light-gallery",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "author": "rumess",
   "license": "MIT",
   "repository": "rumess/react-light-gallery",
+  "keywords": ["react", "reactjs", "image", "gallery", "light-gallery", "javascript"],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

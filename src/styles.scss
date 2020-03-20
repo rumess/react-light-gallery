@@ -5,6 +5,13 @@
         @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
             flex-direction: row;
         }
+        @media (min-width: 481px) {
+            &:after {
+                content:'';
+                display:block;
+                flex-grow: 10;
+            }
+        }
         .item {
             position: relative;
             height: 40vh;
@@ -23,7 +30,6 @@
             }
 
             // Smaller screens in portrait
-
             @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
                 height: auto;
                 width: 100%;
